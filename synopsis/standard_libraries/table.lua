@@ -22,13 +22,9 @@ end
 --         insert
 -------------------------------
 --[[
-function table.insert(list: table, pos: integer, value: any)
-
-Inserts element `value` at position `pos` in `list`.
-
-[View documents](http://www.lua.org/manual/5.1/manual.html#pdf-table.insert)
-
-function table.insert(list: table, value: any)
+NB: 2 formats:
+table.insert(list: table, pos: integer, value: any) -- insert by idx
+table.insert(list: table, value: any) -- insert to the end
 ]]
 
 -- local tab = { "a", "b", cat = "Tom" }
@@ -39,6 +35,16 @@ function table.insert(list: table, value: any)
 -- -- 1	a
 -- -- 2	c
 -- -- 3	b
+-- -- cat	Tom
+
+-- local tab = { "a", "b", cat = "Tom" }
+-- table.insert(tab, "c")
+-- for k, v in pairs(tab) do
+-- 	print(k, v)
+-- end
+-- -- 1	a
+-- -- 2	b
+-- -- 3	c
 -- -- cat	Tom
 
 -------------------------------
