@@ -108,6 +108,7 @@ meta: __eq
 --------------------------------
 --[[
 operator: ~=
+analog in py: !=
 meta: __eq (inverted)
 ]]
 

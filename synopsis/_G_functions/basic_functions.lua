@@ -46,24 +46,24 @@ type:
 --         tonumber
 -------------------------------
 --[[
-function tonumber(e: any)
+function tonumber(e: any, base?: integer)
   -> number?
 
     When called with no `base`, `tonumber` tries to convert its argument to a
-    number. If the argument is already a number or a string convertible to a
-    number, then `tonumber` returns this number; otherwise, it returns `fail`.
-    The conversion of strings can result in integers or floats, according to
-    the lexical conventions of Lua (see
-    [§3.1](http://www.lua.org/manual/5.1/manual.html#3.1)). The string may
-    have leading and trailing spaces and a sign.
+    number.
 
-[View documents](http://www.lua.org/manual/5.1/manual.html#pdf-tonumber)
+    When called WITH `base` (2..36), `e` must be a STRING,
+    and it is interpreted as an integer in that base.
+    Returns nil if the string is not a valid number in that base.
+
+    NB: with base, the string must be an integer (no floats, no exponent).
 ]]
 
 -- print(type(tonumber("asd"))) -- nil
 -- print(type(tonumber("123"))) -- number
 -- print(type(tonumber(123))) -- number
 -- print(type(tonumber(nil))) -- nil
+-- print(tonumber("a", 16)) -- 10
 
 -------------------------------
 --         tostring
