@@ -202,6 +202,8 @@ function string.gmatch(s: string, pattern: string)
 --         gsub
 -------------------------------
 --[[
+global substitution
+
 function string.gsub(s: string, pattern: string, repl: string|table|function, n?: integer)
   -> string
   2. integer
@@ -212,6 +214,12 @@ function string.gsub(s: string, pattern: string, repl: string|table|function, n?
 
 -- print(string.gsub("hello world", "o", "$")) -- hell$ w$rld	2
 -- print(string.gsub("hello", "l", "")) -- heo            2
+
+-- local s = "hello"
+-- -- return 2 values
+-- print(s:gsub("l", "")) -- heo            2
+-- -- return first value only
+-- print((s:gsub("l", ""))) -- heo
 
 -------------------------------
 --         unpack
